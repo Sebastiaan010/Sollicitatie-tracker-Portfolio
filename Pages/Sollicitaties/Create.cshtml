@@ -1,0 +1,29 @@
+﻿@page
+@model SollicitatieTracker.Pages.Sollicitaties.CreateModel
+@using SollicitatieTracker.Models
+
+<h1>Nieuwe sollicitatie</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Sollicitatie.Bedrijfsnaam"></label>
+        <input asp-for="Sollicitatie.Bedrijfsnaam" />
+    </div>
+    <div>
+        <label asp-for="Sollicitatie.Functietitel"></label>
+        <input asp-for="Sollicitatie.Functietitel" />
+    </div>
+    <div>
+        <label asp-for="Sollicitatie.Status"></label>
+        <select asp-for="Sollicitatie.Status" asp-items="Html.GetEnumSelectList<SollicitatieStatus>()"></select>
+    </div>
+    <div>
+        <label asp-for="Sollicitatie.Datum"></label>
+        <input asp-for="Sollicitatie.Datum" type="date" />
+    </div>
+    <div>
+        <label asp-for="Sollicitatie.Notities"></label>
+        <textarea asp-for="Sollicitatie.Notities"></textarea>
+    </div>
+    <button type="submit">Opslaan</button>
+</form>

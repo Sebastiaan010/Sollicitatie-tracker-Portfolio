@@ -1,0 +1,38 @@
+﻿@page
+@model SollicitatieTracker.Pages.Sollicitaties.IndexModel
+
+<h1>Mijn sollicitaties</h1>
+
+<a href="/Sollicitaties/Create">Nieuwe sollicitatie toevoegen</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Bedrijf</th>
+            <th>Functie</th>
+            <th>Status</th>
+            <th>Datum</th>
+            <th>Notities</th>
+            <th>Acties</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sollicitatie in Model.Sollicitaties)
+        {
+            <tr>
+                <td>@sollicitatie.Bedrijfsnaam</td>
+                <td>@sollicitatie.Functietitel</td>
+                <td class="status-@sollicitatie.Status">@sollicitatie.Status</td>
+                <td>@sollicitatie.Datum</td>
+                <td>@sollicitatie.Notities</td>
+                <td><a href="/Sollicitaties/Edit/@sollicitatie.Id">Bewerken</a></td>
+                <td>
+                    <a href="/Sollicitaties/Edit/@sollicitatie.Id">Bewerken</a>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@sollicitatie.Id" style="display:inline">
+                        <button type="submit">Verwijderen</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+# Build output (steeds opnieuw te genereren met dotnet build)
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache/workspace-bestanden (persoonlijk, niet projectgebonden)
+.vs/
+*.user
+*.suo
+
+# Publish-mappen
+[Pp]ublish/
+*.pubxml
+
+# Rider / VS Code, voor het geval je die ooit ook gebruikt
+.idea/
+.vscode/
+
+# Lokale secrets/config die je nooit wilt delen
+appsettings.*.local.json
+*.env
+*.db
+*.db-shm
+*.db-wal
+Claude outputs/
